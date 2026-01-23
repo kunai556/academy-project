@@ -4,31 +4,39 @@
 <meta charset="UTF-8">
 <title>Мой сайт</title>
 <style>
+  /* Анимация радуги */
+  @keyframes rainbow {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+  }
+
   body {
     margin: 0;
     height: 100vh;
-    background-image: url("bg.jpg"); /* твой фон */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* верх - ячейки, низ - текст */
     align-items: center;
     padding: 20px;
+
+    /* Радужный фон */
+    background: linear-gradient(-45deg, red, orange, yellow, green, blue, indigo, violet);
+    background-size: 400% 400%;
+    animation: rainbow 15s ease infinite;
   }
 
   /* Контейнер для ячеек */
   .cells {
     display: flex;
     gap: 20px;
-    justify-content: center; /* выравниваем по центру */
+    justify-content: center;
     margin-top: 20px;
   }
 
   .cell {
-    width: 140px; /* средний размер */
+    width: 140px;
     height: 140px;
     border: 2px solid black;
     cursor: pointer;
@@ -39,7 +47,7 @@
   }
 
   .cell:hover {
-    background: #ddd;
+    background: rgba(255,255,255,0.5);
   }
 
   /* Текст внизу */
